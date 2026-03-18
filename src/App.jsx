@@ -28,6 +28,7 @@ import UserProfile from "./pages/auth/UserProfile";
 import TenantDetails from "./pages/admin/TenantDetails";
 import RenterDetails from "./pages/admin/RenterDetails";
 import Footer from "./components/Footer";
+import NotFound from "./pages/NotFound";
 
 const App = () => {
   return (
@@ -64,6 +65,9 @@ const App = () => {
                         <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
                         <Route path="/dashboard/archive/:roomId" element={<ProtectedRoute><RoomArchive /></ProtectedRoute>} />
                         <Route path="/profile" element={<ProtectedRoute><UserProfile /></ProtectedRoute>} />
+
+                        {/* 404 Route */}
+                        <Route path="*" element={<NotFound />} />
                       </Routes>
                     </main>
                     <Footer />
